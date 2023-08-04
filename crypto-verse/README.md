@@ -2,7 +2,7 @@
 
 Cryptoverse is an online web application for all about crypto like crypto updates, crypto news, crypte exchanges, and crypto details.
 
-## Tools and Usage
+## Tools
 - Vite + ReactJS
 - TypeScript
 - Millify
