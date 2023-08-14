@@ -63,11 +63,17 @@ const ProductPage = ({params}: {params: {slug: string}}) => {
         setLoadingBtn(true)
         // const isAddedQuery = `*[_type == "cart" && _id == "${product._id}${userId}"][0]`
         // const isAddedResponse = await client.fetch(isAddedQuery)  
+
+
         const img = imgUrlFor(product.image[0]).url();  
-   
+        
+        const isAddedToCart = shopContext.cartItems.find(item => item._id == `${product._id}${userId}`)
+
+        console.log("IS+ADDED",  isAddedToCart)
+
         client.getDocument(`${product._id}${userId}`).then(async(data) => {
             
-            if(data){
+            if(data && isAddedToCart) {
                 const doc = {...data, quantity: data?.quantity + quantity, productImage:  String(img)}
                 client.createOrReplace(doc)
                     .then((res) => {  
