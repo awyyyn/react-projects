@@ -74,7 +74,7 @@ const ProductPage = ({params}: {params: {slug: string}}) => {
         client.getDocument(`${product._id}${userId}`).then(async(data) => {
             
             if(data && isAddedToCart) {
-                const doc = {...data, quantity: data?.quantity + quantity, productImage:  String(img)}
+g                const doc = {...data, quantity: data?.quantity + quantity, productImage:  String(img)}
                 client.createOrReplace(doc)
                     .then((res) => {  
                         const updateQuantity = shopContext.cartItems.map(item => {
