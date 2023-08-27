@@ -1,8 +1,7 @@
 import { cardProps} from "../types" 
 import {
     Dialog,
-    DialogContent,
-    DialogDescription,
+    DialogContent, 
     DialogHeader,
     DialogTitle,
     DialogTrigger,

@@ -7,7 +7,7 @@ import { stay } from "./types";
 function App() { 
 
   const [search, setSearch] = useState(false);
-  const [stays, setStays] = useState(staysData as stay[]);
+  const stays = staysData as stay[]
   const [guest, setGuest] = useState('');
  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
